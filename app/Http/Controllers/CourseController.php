@@ -55,8 +55,8 @@ class CourseController extends Controller
                 'level' => 'required',
             ]
         );
-        if (Course::Where('Name', "=", request()->title)->Where('Level', "=", request()->level)->count() == 1) {
-            if (Course::Where('Name', "=", request()->title)->Where('Level', "=", request()->level)->value("id") == $course->id) {
+        if (Course::Where('Name', "=", request()->title)->Where('Level', "=", request()->level)->count() >=0) {
+            if ((Course::Where('Name', "=", request()->title)->Where('Level', "=", request()->level)->value("id") == $course->id) || empty(Course::Where('Name', "=", request()->title)->Where('Level', "=", request()->level)->value("id")) ) {
                 $course->update(
                     [
                         "Name" => strtolower(request()->title),
@@ -66,7 +66,9 @@ class CourseController extends Controller
                     ]
 
                 );
-            } else return back()->withErrors(['title' => 'This course with the same level already exists.',])->withInput();
+            }
+
+            else return back()->withErrors(['title' => 'This course with the same level already exists.',])->withInput();
         } else return back()->withErrors(['title' => 'This course with the same level already exists.',])->withInput();
         return redirect()->route("courses.index", ['course' => $course])->with("success", "Course added successfully");
     }
