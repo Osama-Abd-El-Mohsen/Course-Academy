@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
     <!-- Content Wrapper. Contains page content -->
+
     <div class="content-wrapper">
+
         <section class="content-header">
             <br></br>
             <section class="content">
@@ -16,31 +18,45 @@
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <table id="example2" class="table table-bordered table-hover">
+                                <table id="example2" class="table table-bordered ">
                                     <thead>
                                         <tr>
-                                            <th>Title</th>
-                                            <th>Description</th>
-                                            <th>Level</th>
-                                            <th>Price</th>
-                                            <th>Control</th>
+                                            <th style="width:30%">Title</th>
+                                            <th style="width:30%">Description</th>
+                                            <th style="width:10%">Level</th>
+                                            <th style="width:10%">($) Price </th>
+                                            <th style="width:100%">Control</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($courses as $course)
-                                            <tr>
-                                                <td>{{ $course->Name }}</td>
-                                                <td>{{ $course->Description }}</td>
-                                                <td>{{ $course->Level }}</td>
-                                                <td> {{ $course->Price }}</td>
-                                                <td>
-                                                    <div class="btn-group" style="width:20px">
-                                                        <button type="button" class="btn btn-success">Show</button>
-                                                        <button type="button" class="btn btn-info">Edit</button>
-                                                        <button type="button" class="btn btn-danger">Delete</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                        <tr>
+                                            <td>{{ $course->Name }}</td>
+                                            <td>{{ $course->Description }}</td>
+                                            <td>
+                                                @if ($course->Level == 'advanced')
+                                                    <span class="badge badge-danger" >{{ $course->Level }}</span>
+                                                @elseif ($course->Level == 'beginner')
+                                                    <span class="badge badge-success" >{{ $course->Level }}</span>
+                                                @else
+                                                    <span class="badge badge-warning" >{{ $course->Level }}</span>
+                                                @endif
+                                            </td>
+                                            <td> {{ $course->Price }}</td>
+                                            <td>
+                                                    <form method="post" action={{route("courses.destroy",$course->id)}}>
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <div class="btn-group" action="{{route("courses.destroy",$course->id)}}">
+                                                            @csrf
+                                                            @method('delete')
+                                                            <a href="{{route("courses.students",$course->id)}}" type="button" class="btn btn-success">Students Rolled </a>
+                                                            <a href="{{route("courses.edit",$course->id)}}" type="button" class="btn btn-info">Edit</a>
+                                                            <button  type="submit" class="btn btn-danger">Delete</button>
+                                                        </div>
+                                                    </form>
+                                                    </td>
+                                                </tr>
                                         @endforeach
 
                                 </table>

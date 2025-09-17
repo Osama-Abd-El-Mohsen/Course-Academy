@@ -9,8 +9,9 @@ class Course extends Model
 {
     protected $fillable = ["Name","Description","Price","Level"];
 
-    public function registration()
+    public function students()
     {
-        return $this->hasMany(CourseRegister::class,'Course_id','id');
+        // return $this->hasMany(CourseRegister::class,'Course_id','id');
+        return $this->belongsToMany(Student::class, 'course_registers');
     }
 }

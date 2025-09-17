@@ -39,9 +39,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href={{route("students.index")}} class="nav-link">Students</a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href={{route("courses_register.index")}} class="nav-link">Courses registers</a>
-                </li>
+
             </ul>
 
             <!-- SEARCH FORM -->
@@ -204,12 +202,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <p>Students</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href={{route("courses_register.index")}} class="nav-link {{request()->routeIs('courses_register.index')?'active':''}}">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Courses Registers</p>
-                                    </a>
-                                </li>
+
                             </ul>
                         </li>
 

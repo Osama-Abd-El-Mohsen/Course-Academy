@@ -3,14 +3,14 @@
     <div class="content-wrapper">
         <section class="content-header">
             <section class="content">
-                <div class="card card-primary">
+                <div class="card card-dark">
                     <div class="card-header">
-                        <h3 class="card-title">Add New Course</h3>
+                        <h3 class="card-title">Edit Course</h3>
                     </div>
                     <!-- form start -->
-                    <form class="form-horizontal" method="post" action={{ route('courses.store') }}>
+                    <form class="form-horizontal" method="post" action={{ route('courses.update',$course->id) }}>
                         @csrf
-                        @method('post')
+                        @method('put')
                         @if ($errors->any())
                             <div class="text-left alert alert-danger" style="text-align: left">
                                 <ul>
@@ -24,19 +24,19 @@
                             <div class="form-group row">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Title</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Title" name="title" value="{{old('title')}}">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Title" name="title" value="{{old('title',$course->Name ?? '')}}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="inputPassword3" class="col-sm-2 control-label">Description</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="Description" name="description" value="{{old('description')}}">
+                                    <input type="text" class="form-control" id="inputPassword3" placeholder="Description" name="description" value="{{old('description',$course->Description ?? '')}}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="inputPassword3" class="col-sm-2 control-label">Price</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="Price" name="price" value="{{old('price')}}">
+                                    <input type="text" class="form-control" id="inputPassword3" placeholder="Price" name="price" value="{{old('price',$course->Price ?? '')}}">
                                 </div>
                             </div>
                             <div class="form-group ">
@@ -51,7 +51,7 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary" >Add</button>
+                            <button type="submit" class="btn btn-dark">Update</button>
                             <a href="{{ route('courses.index') }}" " class="btn btn-default float-right">Cancel</a>
                             </div>
                             <!-- /.card-footer -->

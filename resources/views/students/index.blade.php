@@ -13,7 +13,7 @@
 
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <table id="example2" class="table table-bordered table-hover">
+                                <table id="example2" class="table table-bordered ">
                                     <thead>
                                         <tr>
                                             <th>Name</th>
@@ -28,8 +28,8 @@
                                                 <td>{{ $student->Name }}</td>
                                                 <td>{{ $student->Phone }}</td>
                                                 <td>
-                                                    @foreach ($student->registrations as $registration)
-                                                        {{$registration->course->Name }}
+                                                    @foreach ($student->courses as $course)
+                                                        {{$course->Name }}
                                                         {{" , "}}
                                                     @endforeach
                                                 </td>
