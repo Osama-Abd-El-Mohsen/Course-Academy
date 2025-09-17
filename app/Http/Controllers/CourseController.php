@@ -31,10 +31,10 @@ class CourseController extends Controller
         if (Course::Where('Name', "=", request()->title)->Where('Level', "=", request()->level)->count() == 0) {
             Course::Create(
                 [
-                    "Name" => request()->title,
-                    "Description" => request()->description,
-                    "Price" => request()->price,
-                    "Level" => request()->level,
+                    "Name" => strtolower(request()->title),
+                    "Description" => strtolower(request()->description),
+                    "Price" => strtolower(request()->price),
+                    "Level" => strtolower(request()->level),
                 ]
             );
         } else return back()->withErrors(['title' => 'This course with the same level already exists.',])->withInput();
@@ -59,10 +59,10 @@ class CourseController extends Controller
             if (Course::Where('Name', "=", request()->title)->Where('Level', "=", request()->level)->value("id") == $course->id) {
                 $course->update(
                     [
-                        "Name" => request()->title,
-                        "Description" => request()->description,
-                        "Price" => request()->price,
-                        "Level" => request()->level,
+                        "Name" => strtolower(request()->title),
+                        "Description" => strtolower(request()->description),
+                        "Price" => strtolower(request()->price),
+                        "Level" => strtolower(request()->level),
                     ]
 
                 );
