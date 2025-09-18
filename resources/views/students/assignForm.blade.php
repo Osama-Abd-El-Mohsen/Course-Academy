@@ -20,7 +20,6 @@
                             <div class="card-header" style="width:100%; display:flex; justify-content: center;">
                                 <h3 class="card-title" style="font-weight: bold;  font-size:25px;">Register Student To Course</h3>
                             </div>
-
                             <!-- /.card-header -->
                             <form method="post"action="{{ route('students.assignCourse', $course) }}"style="max-width: fit-content;margin-inline: auto;">
                             @csrf
@@ -34,7 +33,7 @@
                                     </select>
                                     <br></br>
                                     <button type="submit" class="btn btn-success">Submit To Course </button>
-                                    <a href={{route('courses.index')}} class="btn btn-primary">Back </a>
+                                    <a href={{route("courses.students",$course)}} class="btn btn-dark">Back </a>
                                 </div>
                             </form>
                             <!-- /.card-body -->
