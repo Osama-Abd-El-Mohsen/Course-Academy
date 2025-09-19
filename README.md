@@ -16,6 +16,40 @@
 
 ---
 
+## ✨ Latest Major Update (2025-09-19)
+
+**Commit:**  
+[`adding Breeze Auth and customise it to suite the project`](https://github.com/Osama-Abd-El-Mohsen/Course-Academy/commit/687f27205e95af00e93880c7b790944fa083e4da)
+
+### What's New
+
+- **Authentication System:**  
+  Integrated Laravel Breeze for authentication, and customized it for the project’s needs.
+  - Added all Auth controllers for registration, login, password reset, and email verification.
+  - Added request validation for authentication.
+  - Added components for layouts.
+
+- **User Management Refactor:**  
+  - Removed the old `Student` model and controller.
+  - Now, all users (students and admins) are managed via the `User` model.
+  - Enhanced migrations: `users` table now includes `isAdmin`, `active`, and `phone` fields.
+  - All course relationships now use `User` instead of `Student`.
+  - Removed the `CourseRegister` and `Student` models, replaced with relationships on `User`.
+
+- **Authorization Controls:**  
+  - All course and user management actions are now protected with admin checks.
+  - Only admins can create, edit, or delete courses and users.
+
+- **UI & Styles:**  
+  - Updated TailwindCSS setup and asset pipeline.
+  - Replaced CSS imports in `resources/css/app.css` with Tailwind’s default structure.
+
+- **Dependency Updates:**  
+  - Added Laravel Breeze and related packages to `composer.json` and `package.json`.
+  - Updated `composer.lock` and `package-lock.json` accordingly.
+
+
+
 ## 🛠 Requirements
 
 - PHP 8 or later
@@ -59,6 +93,7 @@
 6. **Serve the application**
    ```bash
    php artisan serve
+   npm run dev
    ```
 
 7. **Access the dashboard**
@@ -67,11 +102,6 @@
 ---
 
 ## 🌟 Future Improvements
-
-- Add authentication and user roles (Admin/Users).
-- Course image upload.
-- Public course listing page.
-- Advanced reports and analytics.
 - Multilingual support (EN/AR).
 
 ---
@@ -79,6 +109,13 @@
 ## 🤝 Contributing
 
 Contributions are welcome! Please open an issue or a pull request for suggestions, bug reports, or enhancements.
+
+---
+
+## 📜 Commit Log
+
+Check out the full details of the latest commit for code changes:  
+https://github.com/Osama-Abd-El-Mohsen/Course-Academy/commit/687f27205e95af00e93880c7b790944fa083e4da
 
 ---
 
