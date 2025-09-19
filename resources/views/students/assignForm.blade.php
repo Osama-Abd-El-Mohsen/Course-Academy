@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.home')
 @section('content')
     <!-- Content Wrapper. Contains page content -->
 
@@ -28,7 +28,7 @@
                                     <label>Select student</label>
                                     <select class="form-control" name="studentId">
                                         @foreach ($students as $student)
-                                            <option value={{ $student->id }}>{{ $student->Name }}</option>
+                                            <option value={{ $student->id }}>{{ $student->name }}</option>
                                         @endforeach
                                     </select>
                                     <br></br>

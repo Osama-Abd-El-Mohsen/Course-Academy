@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.home')
 @section('content')
     <!-- Content Wrapper. Contains page content -->
 
@@ -44,9 +44,11 @@
                                     <tbody>
                                         @foreach ($students as $student)
                                         <tr>
-                                            <td>{{ $student->Name }}</td>
-                                            <td>{{ $student->Phone }}</td>
-                                            <td>{{ $student->Email }}</td>
+                                            <td>{{ $student->name }}</td>
+                                            <td>{{ $student->phone }}</td>
+                                            <td>
+                                                {{ $student->email }}
+                                            </td>
                                             <td>
                                                 @foreach ($student->courses as $course)
                                                     {{$course->Name }}

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.home')
 @section('content')
     <div class="content-wrapper">
         <section class="content-header">
@@ -79,9 +79,9 @@
                                     <tbody>
                                         @foreach ($course->students as $student)
                                             <tr>
-                                                <td>{{ $student->Name }}</td>
-                                                <td >{{ $student->Email }}</td>
-                                                <td>{{ $student->Phone }}</td>
+                                                <td>{{ $student->name }}</td>
+                                                <td >{{ $student->email }}</td>
+                                                <td>{{ $student->phone }}</td>
                                                 <td>
                                                     <button name="studentId" value={{ $student->id }}  type="submit" class="btn btn-danger">UnRoll</button>
                                                 </td>

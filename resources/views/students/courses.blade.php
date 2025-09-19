@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.home')
 @section('content')
     <div class="content-wrapper">
         <section class="content-header">
@@ -24,15 +24,15 @@
                                 <thead>
                                         <tr>
                                             <th style="width: 20%">Student Name</th>
-                                            <td>{{ $student->Name }}</td>
+                                            <td>{{ $student->name }}</td>
                                         </tr>
                                         <tr>
                                             <th>Student Email</th>
-                                            <td>{{ $student->Email }}</td>
+                                            <td>{{ $student->email }}</td>
                                         </tr>
                                         <tr>
                                             <th>Student Phone</th>
-                                            <td>{{ $student->Phone }}</td>
+                                            <td>{{ $student->phone }}</td>
                                         </tr>
                                 </thead>
 
