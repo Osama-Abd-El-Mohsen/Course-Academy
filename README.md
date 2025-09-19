@@ -50,6 +50,21 @@
 
 
 
+## Pics
+| Picture Name | Picture |
+|--------------|---------|
+| Login   | <img src="readme_assets/login.png" width="700"/> |
+| Register   | <img src="readme_assets/register.png" width="700"/> |
+| Edit Profile   | <img src="readme_assets/profile.png" width="700"/> |
+| Home [Admin]   | <img src="readme_assets/home_if_admin.png" width="1000"/> |
+| Home [Guest]  | <img src="readme_assets/home_if_guest.png" width="1000"/> |
+| Cousrses  | <img src="readme_assets/cousrses.png" width="1000"/> |
+| Add Course  | <img src="readme_assets/add_course.png" width="1000"/> |
+| Edit Course  | <img src="readme_assets/edit_course.png" width="1000"/> |
+| Course's Students  | <img src="readme_assets/rolled_students.png" width="1000"/> |
+| Student's Courses   | <img src="readme_assets/student_courses.png" width="1000"/> |
+
+
 ## 🛠 Requirements
 
 - PHP 8 or later
